@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# Add repositories/ppas
+add-apt-repository -y ppa:chris-lea/node.js
+
+# Update repository information
+apt-get update
+
+# Install essential 
+apt-get install -y git vim nodejs postgresql postgresql-contrib
+
+# Clone project files
+git clone http://github.com/varunjyoti/ng-tripgang /vagrant/ng-tripgang
