@@ -4,8 +4,8 @@ Vagrant and provisioning file for setting up dev env for configured ng app
 
 ### Pre-requisites
 
-1. Vagrant
-2. Virtualbox or Vmware (or any vagrant supported virtualization platform)
+1. Vagrant (https://www.vagrantup.com/)
+2. VirtualBox or VMware (or any vagrant supported virtualization platform)
 
 ### Instructions
 
