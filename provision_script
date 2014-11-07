@@ -9,6 +9,10 @@ apt-get update
 # Install essential 
 apt-get install -y git vim nodejs postgresql postgresql-contrib
 
+# Change postgres config
+cp /vagrant/conf/postgres/pg_hba.conf /etc/postgresql/9.3/main/pg_hba.conf
+cp /vagrant/conf/postgres/postgresql.conf /etc/postgresql/9.3/main/postgresql.conf
+
 # Clone project files
 git clone http://github.com/varunjyoti/tripgang-client /vagrant/tripgang-client 
 git clone http://github.com/varunjyoti/tripgang-server /vagrant/tripgang-server && cd /vagrant/tripgang-server && npm install
