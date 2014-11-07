@@ -16,3 +16,6 @@ cp /vagrant/conf/postgres/postgresql.conf /etc/postgresql/9.3/main/postgresql.co
 # Clone project files
 git clone http://github.com/varunjyoti/tripgang-client /vagrant/tripgang-client 
 git clone http://github.com/varunjyoti/tripgang-server /vagrant/tripgang-server && cd /vagrant/tripgang-server && npm install
+
+# Restart postgres
+service postgresql restart
