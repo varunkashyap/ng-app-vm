@@ -10,4 +10,5 @@ apt-get update
 apt-get install -y git vim nodejs postgresql postgresql-contrib
 
 # Clone project files
-git clone http://github.com/varunjyoti/ng-tripgang /vagrant/ng-tripgang && cd /vagrant/ng-tripgang && npm install
+git clone http://github.com/varunjyoti/tripgang-client /vagrant/tripgang-client 
+git clone http://github.com/varunjyoti/tripgang-server /vagrant/tripgang-server && cd /vagrant/tripgang-server && npm install
