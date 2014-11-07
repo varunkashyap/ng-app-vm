@@ -9,6 +9,9 @@ apt-get update
 # Install essential 
 apt-get install -y git vim nodejs postgresql postgresql-contrib
 
+# Install grunt
+npm install -g grunt-cli
+
 # Change postgres config
 cp /vagrant/conf/postgres/pg_hba.conf /etc/postgresql/9.3/main/pg_hba.conf
 cp /vagrant/conf/postgres/postgresql.conf /etc/postgresql/9.3/main/postgresql.conf
