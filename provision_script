@@ -24,7 +24,7 @@ git clone http://github.com/varunjyoti/tripgang-server /vagrant/tripgang-server 
 service postgresql restart
 
 #install bower
-npm install bower
+npm install -g bower
 
 #install bower dependencies
 bower install
