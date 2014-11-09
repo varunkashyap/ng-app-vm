@@ -22,3 +22,13 @@ git clone http://github.com/varunjyoti/tripgang-server /vagrant/tripgang-server 
 
 # Restart postgres
 service postgresql restart
+
+#install bower
+npm install bower
+
+#install bower dependencies
+bower install
+
+#intall ruby and compass
+apt-get install -y ruby-dev
+gem install compass

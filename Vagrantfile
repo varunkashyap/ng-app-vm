@@ -14,6 +14,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "shell", path: "provision_script"
   config.vm.network "forwarded_port", guest: "3000", host: "3000"
   config.vm.network "forwarded_port", guest: "5432", host: "5432"
+  config.vm.network "forwarded_port", guest: "9000", host: "9000"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
