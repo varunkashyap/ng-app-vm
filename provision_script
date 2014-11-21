@@ -20,9 +20,9 @@ npm install -g grunt-cli
 cp /vagrant/conf/postgres/pg_hba.conf /etc/postgresql/9.3/main/pg_hba.conf
 cp /vagrant/conf/postgres/postgresql.conf /etc/postgresql/9.3/main/postgresql.conf
 # Add postgres user and database
-su postgres psql -c "CREATE USER $DATABASE_USER WITH PASSWORD $DATABASE_USER_PASSWORD"
-su postgres psql -c "CREATE DATABASE $DATABASE_NAME"
-su postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE $DATABASE_NAME to $DATABASE_USER"
+sudo -u  postgres psql -c "CREATE USER $DATABASE_USER WITH PASSWORD '$DATABASE_USER_PASSWORD'"
+sudo -u  postgres psql -c "CREATE DATABASE $DATABASE_NAME"
+sudo -u  postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE $DATABASE_NAME to $DATABASE_USER"
 
 # Restart postgres
 service postgresql restart
