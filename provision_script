@@ -6,12 +6,18 @@ DATABASE_USER_PASSWORD=tguser123
 
 # Add repositories/ppas
 add-apt-repository -y ppa:chris-lea/node.js
+add-apt-repository -y ppa:webupd8team/java
+sudo apt-get update
 
 # Update repository information
 apt-get update
 
+# Accept Oracle Java license
+echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
+echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
+
 # Install essential 
-apt-get install -y git vim nodejs postgresql postgresql-contrib
+apt-get install -y git vim nodejs postgresql postgresql-contrib oracle-java8-installer
 
 # Install grunt
 npm install -g grunt-cli
