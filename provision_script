@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+DATABASE_USER=tguser
+DATABASE_NAME=tguser
+DATABASE_USER_PASSWORD=tguser123
+
 # Add repositories/ppas
 add-apt-repository -y ppa:chris-lea/node.js
 
@@ -15,6 +19,13 @@ npm install -g grunt-cli
 # Change postgres config
 cp /vagrant/conf/postgres/pg_hba.conf /etc/postgresql/9.3/main/pg_hba.conf
 cp /vagrant/conf/postgres/postgresql.conf /etc/postgresql/9.3/main/postgresql.conf
+# Add postgres user and database
+sudo -u  postgres psql -c "CREATE USER $DATABASE_USER WITH PASSWORD '$DATABASE_USER_PASSWORD'"
+sudo -u  postgres psql -c "CREATE DATABASE $DATABASE_NAME"
+sudo -u  postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE $DATABASE_NAME to $DATABASE_USER"
+
+# Restart postgres
+service postgresql restart
 
 # Clone project files
 git clone http://github.com/varunjyoti/tripgang-client /vagrant/tripgang-client && cd /vagrant/tripgang-client && npm install
@@ -26,14 +37,12 @@ ln -s /vagrant/tripgang-client public
 # Restart postgres
 service postgresql restart
 
-#install bower
+# Install bower
 npm install -g bower
 
-#install bower dependencies
+# Install bower dependencies
 bower install
 
-#intall ruby and compass
+# Install ruby and compass
 apt-get install -y ruby-dev
 gem install compass
-
-
