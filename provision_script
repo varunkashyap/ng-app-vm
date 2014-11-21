@@ -20,6 +20,9 @@ cp /vagrant/conf/postgres/postgresql.conf /etc/postgresql/9.3/main/postgresql.co
 git clone http://github.com/varunjyoti/tripgang-client /vagrant/tripgang-client && cd /vagrant/tripgang-client && npm install
 git clone http://github.com/varunjyoti/tripgang-server /vagrant/tripgang-server && cd /vagrant/tripgang-server && npm install
 
+# Linking server folder with client
+ln -s /vagrant/tripgang-client public
+
 # Restart postgres
 service postgresql restart
 
@@ -32,3 +35,5 @@ bower install
 #intall ruby and compass
 apt-get install -y ruby-dev
 gem install compass
+
+
